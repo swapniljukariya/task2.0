@@ -12,7 +12,7 @@ const Footer = () => (
       <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
     </div>
-    <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+    <p>&copy; {new Date().getFullYear()}  Made by Swapnil</p>
   </footer>
 );
 
