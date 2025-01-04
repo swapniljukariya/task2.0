@@ -13,7 +13,12 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src="https://logowik.com/content/uploads/images/todo-group3144.logowik.com.webp" alt="Logo" />
+        <NavLink to="/" onClick={closeMenu}> {/* Logo now navigates to Home */}
+          <img 
+            src="https://logowik.com/content/uploads/images/todo-group3144.logowik.com.webp" 
+            alt="Logo" 
+          />
+        </NavLink>
       </div>
       <nav>
         {/* Hamburger Icon for small screens */}
