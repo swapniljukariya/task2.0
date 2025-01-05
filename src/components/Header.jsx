@@ -12,6 +12,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
+        {/* logo */}
         <NavLink to="/" onClick={closeMenu}>
           <img 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3gB-8DV5lSgeCZVAoRzPEWenpddafAJRUIiSl5aS8-FU2t9Y6HdBGi3EaqVVVrrRXkaA&usqp=CAU" 
@@ -19,6 +20,7 @@ const Header = () => {
           />
         </NavLink>
       </div>
+       {/*navlinks */}
       <nav>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <FaBars />

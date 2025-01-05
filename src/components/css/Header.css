@@ -65,7 +65,7 @@ nav {
 
 /* Mobile view - Adjustments */
 @media (max-width: 767px) {
-  /* For small screens, remove fixed positioning and use relative positioning */
+
   .header {
     position: relative;
     padding: 10px 20px;

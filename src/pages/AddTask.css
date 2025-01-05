@@ -1,21 +1,18 @@
+
 .add-task-container {
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 100vh;
+  min-height: 100vh;
   background-color: white;
-  margin: 0; /* Remove any default margin */
   width: 100%; /* Full width */
-  box-sizing: border-box; /* Include padding in width calculation */
-  margin-top: 6em;
-
-
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  padding: 2rem; /* Adding padding for larger devices */
 }
 
 .add-task-header {
-  font-size: 26px;
+  font-size: 30px; /* Larger font size for larger screens */
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
@@ -28,35 +25,35 @@
   align-items: center;
   margin-bottom: 30px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px; /* Increased max width for larger screens */
 }
 
 .task-input {
   padding: 15px;
-  font-size: 16px;
-  width: 75%;
+  font-size: 18px; /* Larger font size */
+  width: 75%; /* Default width for larger screens */
   border: 2px solid black;
   border-radius: 25px;
-  margin-right: 10px;
+  margin-right: 15px; /* Increased margin for better spacing */
   transition: border-color 0.3s ease;
   box-sizing: border-box;
-  height: 55px;
+  height: 60px; /* Increased height */
 }
 
 .task-button {
   padding: 10px 15px;
-  font-size: 18px;
-  background-color: transparent; /* Removed green background */
-  color: black; /* Added text color for icon */
-  border: 2px solid black; /* Border color for button */
+  font-size: 20px; /* Larger font size for bigger screens */
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px; /* Increased size */
 }
 
 .task-button:hover {
@@ -65,7 +62,7 @@
 }
 
 .task-button .add-icon {
-  font-size: 22px;
+  font-size: 24px; /* Slightly larger icon */
 }
 
 .task-image-container {
@@ -85,41 +82,40 @@
 @media (max-width: 768px) {
   .add-task-container {
     padding: 1rem;  /* Less padding for smaller screens */
-    margin: 0 auto; /* Equal margin on all sides */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    margin: 0 auto; /* Center the container */
+    width: 90%; /* Take 90% of the screen width */
   }
 
   .task-form {
-    flex-direction: column; /* Stack input and button */
-    align-items: stretch; /* Full width for input and button */
-    gap: 10px; /* Add space between input and button */
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: stretch; /* Stretch elements to full width */
+    gap: 10px; /* Space between input and button */
     width: 100%;
   }
 
   .task-input {
     width: 100%; /* Full width for input */
-    height: 50px; /* Adjust height */
+    height: 50px; /* Adjust height for smaller screens */
   }
 
   .task-button {
     width: 50px;
     height: 50px;
-    margin: 0 auto; /* Center button */
+    margin: 0 auto; /* Center the button */
   }
 }
 
-/* Extra Small Devices */
+/* Extra Small Devices (max-width: 480px) */
 @media (max-width: 480px) {
   .add-task-container {
-    padding: 1rem;  /* Ensure padding is consistent */
-    margin: 0 auto; /* Equal margin on all sides */
-    width: 100%; /* Full width */
+    padding: 1rem;  /* Consistent padding for extra small devices */
+    margin: 0 auto; /* Center the container */
+    width: 90%; /* Make it responsive */
   }
 
   .task-input {
     width: 100%; /* Full width for input */
-    height: 45px; /* Slightly reduced height for very small screens */
+    height: 45px; /* Slightly reduced height */
   }
 
   .task-button {

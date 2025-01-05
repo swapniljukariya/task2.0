@@ -1,14 +1,14 @@
 
 body, html {
-  height: 100%; /* Ensures the body stretches to the full height of the viewport */
-  margin: 0; /* Removes default margins */
+  height: 100%; 
+  margin: 0; 
   display: flex;
-  flex-direction: column; /* Allows stacking of header, content, and footer */
+  flex-direction: column; 
 }
 
 /* Main content area */
 #root {
-  flex: 1; /* Pushes the footer to the bottom if the content is short */
+  flex: 1; 
 }
 
 /* Footer styles */
@@ -24,24 +24,24 @@ body, html {
 /* Social icons container */
 .social-icons {
   display: flex;
-  justify-content: center; /* Center the icons horizontally */
-  gap: 1rem; /* Space between icons */
-  margin-bottom: 0.5rem; /* Space between icons and text */
+  justify-content: center; 
+  gap: 1rem; 
+  margin-bottom: 0.5rem; 
 }
 
-/* Social icon links */
+
 .social-icons a {
-  color: #3498db; /* Blue color for the icons */
-  font-size: 1.5rem; /* Slightly larger icon size */
-  transition: color 0.3s; /* Smooth hover transition */
+  color: #3498db; 
+  font-size: 1.5rem; 
+  transition: color 0.3s; 
 }
 
 .social-icons a:hover {
-  color: #2980b9; /* Darker blue on hover */
+  color: #2980b9; 
 }
 
 /* Footer text */
 .footer p {
   margin: 0;
-  color: #333; /* Dark gray text color */
+  color: #333; 
 }

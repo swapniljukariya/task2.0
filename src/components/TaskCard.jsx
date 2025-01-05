@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/TaskCard.css";
+
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 const TaskCard = ({ task, onDelete, onStatusChange }) => {
