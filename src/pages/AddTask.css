@@ -106,4 +106,31 @@
     height: 50px;
     margin-bottom: 10px;
   }
+  @media (max-width: 768px) {
+    .add-task-container {
+      padding: 1rem;
+      margin: 1rem auto; /* Equal margin on all sides */
+      width: 95%; /* Take most of the screen width */
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
+    }
+  
+    .task-form {
+      flex-direction: column; /* Stack input and button */
+      align-items: stretch; /* Full width for input and button */
+      gap: 10px; /* Add space between input and button */
+      width: 100%;
+    }
+  
+    .task-input {
+      width: 100%; /* Full width for input */
+      height: 50px; /* Adjust height */
+    }
+  
+    .task-button {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto; /* Center button */
+    }
+  }
+  
 }

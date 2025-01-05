@@ -204,16 +204,17 @@
       flex-grow: 1; /* Buttons grow to fill space */
       padding: 0.5rem; /* Adjust padding for better fit */
       font-size: 0.9rem; /* Reduce font size slightly */
+      
     }
   
     .clear-all-button {
-      flex-grow: 1; /* Clear All grows like filter buttons */
-      text-align: center;
+       /* Clear All grows like filter buttons */
+      
     }
     .home-container {
         margin: 1rem; /* Equal margins on all sides for small screens */
         padding: 1rem; /* Reduce padding for better fit */
-        width: auto; /* Allow the container to resize properly */
+        width: 90vw; /* Allow the container to resize properly */
         box-shadow: none; /* Optional: Simplify shadows for smaller screens */
     }
   }
