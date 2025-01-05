@@ -1,113 +1,108 @@
 .edit-task-container {
-    
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 98vw;
-    font-style: italic;
-    margin-top: 3em;
-
-  }
-  
-  .edit-task-container h2 {
-    text-align: center;
-    font-size: 35px;
-    font-weight: bolder;
-    margin-bottom: 20px;
-    color: #333;
+  padding: 20px;
+  margin-top: 5em !important;
+  width: 80%; 
+  max-width: 600px; 
+  margin: 0 auto; 
 }
-   
+
+.title {
+  text-align: center;
+  color: #007BFF;
+}
+
 .task-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 20px;
+  display: flex;
+  flex-direction: column; /* Changed to a column layout */
+  gap: 20px;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column; /* Changed to column layout for each task */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.edit-mode {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.task-input {
+  padding: 5px;
+  width: 80%;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 40px;
+  margin-left: 7px;
+  margin-top: 12px;
 
 
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.view-mode {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.task-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between header and task title */
+}
+
+.task-card-header h3 {
+  margin-right: 10px;
+}
+
+.edit-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #007BFF;
+}
+
+.edit-button:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-grid {
+    gap: 15px; /* Adjust gap for smaller screens */
   }
-  
-  /* Task Item */
+
   .task-item {
-    background-color:#f0f0f0;;
-    padding: 15px;
-    margin: 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100px;
-    background-color: #f9f9f9;
-    font-size: 1.2em;
-    font-weight: bold;
-  
+    padding: 15px; /* More padding for smaller screens */
   }
-  
-  .task-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  .save-button {
+    margin-right: 3em;
+    margin-top: 0.8em;
   }
-  
-  /* Edit Mode */
-  .edit-mode {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .task-grid {
+    gap: 10px; /* Adjust gap for very small screens */
   }
-  
-  .edit-mode .task-input {
-    padding: 10px;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+  .task-item {
+    padding: 10px; /* More compact padding */
   }
-  
-  .edit-mode .save-button {
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .edit-mode .save-button:hover {
-    background-color: #45a049;
-  }
-  
-  
-  .view-mode {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .view-mode span {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  .view-mode .edit-button {
-    padding: 8px 15px;
-    background-color: green;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .view-mode .edit-button:hover {
-    background-color: #1976d2;
-  }
-  
-  /* Responsiv design */
-  @media (max-width: 600px) {
-    .task-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
+}

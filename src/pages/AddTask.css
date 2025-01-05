@@ -1,73 +1,108 @@
 .add-task-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100vw;
-    font-style: italic;
-    margin-top: 8em;
-  }
-  
-  .add-task-header {
-    font-size: 2em;
-    color:purple;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .task-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50vw;
-    height: 20vh;
-    
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  background-color: white;
+}
 
+.add-task-header {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.task-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.task-input {
+  padding: 15px ;
+  font-size: 16px;
+  width: 75%;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  height: 55px;  
+}
+
+
+
+.task-button {
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: transparent; /* Removed green background */
+  color: black; /* Added text color for icon */
+  border: 2px solid black; /* Border color for button */
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  width: 55px;
+  height: 55px;
+}
+
+.task-button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.task-button .add-icon {
+  font-size: 22px;
+}
+
+.task-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.task-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+ 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
   }
-  
+
   .task-input {
     width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    margin-bottom: 20px;
-    border: 3px solid purple;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-    background-color:  white;
-    color:  black;
-  }
-  
-  .task-input:focus {
-    border-color: #7c4dff;
-    outline: none;
-  }
-  
-  .task-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: green;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .task-button:hover {
-    background-color: #7c4dff;
-  }
-  
-  .task-image-container {
-    margin-top: 20px;
-  }
-  
-  .task-image {
-    max-width: 100%;
-    height: auto;
+    margin-right: 8px; /* Keep spacing between input and button */
+    margin-bottom: 10px;
+    height: 50px; /* Increased height for small screens */
+
  
-   
   }
-  
+  .add-task-container {
+    min-height: 70vh;
+  }
+
+  .task-button {
+
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+}

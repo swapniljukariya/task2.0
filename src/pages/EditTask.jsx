@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { useTasks } from "../context/TaskContext";
-import { useNavigate } from "react-router-dom"; 
-import { toast } from "react-toastify"; 
-import "react-toastify/dist/ReactToastify.css";
-import "./EditTask.css";
+import { RiEdit2Line } from "react-icons/ri";  // Edit icon
+import { toast } from "react-toastify";  // Toastify for notifications
+import "react-toastify/dist/ReactToastify.css";  // Include the toastify CSS
+import "./EditTask.css";  // Add custom styling
 
 const EditTask = () => {
-  const { tasks, updateTask } = useTasks();  // Access updateTask from context
+  const { tasks, editTask } = useTasks();  // Access editTask from context
   const [editedTaskId, setEditedTaskId] = useState(null);
   const [editedTitle, setEditedTitle] = useState("");
-  const navigate = useNavigate(); // Initialize the navigate function
 
   const handleEditClick = (taskId, currentTitle) => {
     setEditedTaskId(taskId);
@@ -22,18 +21,17 @@ const EditTask = () => {
 
   const handleSave = (taskId) => {
     if (editedTitle.trim() !== "") {
-      updateTask(taskId, editedTitle, false); // Update task with the new title
-      setEditedTaskId(null); 
-      toast.success("Task updated successfully!");
-      navigate("/"); // Navigate back to Home after saving the task
+      editTask(taskId, editedTitle);  // Call editTask to update task title
+      setEditedTaskId(null);
     } else {
-      toast.error("Please enter a task title."); 
+      toast.error("Please enter a task title.");  // Show error if title is empty
     }
   };
 
   return (
     <div className="edit-task-container">
-      <h2>Edit Tasks</h2>
+      <h1 className="title">Edit Todo</h1>
+
       <div className="task-grid">
         {tasks.map((task) => (
           <div key={task.id} className="task-item">
@@ -54,13 +52,15 @@ const EditTask = () => {
               </div>
             ) : (
               <div className="view-mode">
-                <span>{task.title}</span>
-                <button
-                  onClick={() => handleEditClick(task.id, task.title)}
-                  className="edit-button"
-                >
-                  Edit
-                </button>
+                <div className="task-card-header">
+                  <h3 className={task.completed ? "completed" : ""}>{task.title}</h3>
+                  <button
+                    onClick={() => handleEditClick(task.id, task.title)}
+                    className="edit-button"
+                  >
+                    <RiEdit2Line size={20} />  {/* Edit icon */}
+                  </button>
+                </div>
               </div>
             )}
           </div>

@@ -1,37 +1,34 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaHome, FaPlus, FaEdit, FaBars } from 'react-icons/fa';
-import './css/Header.css';
+import '../components/css/Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const closeMenu = () => setIsMenuOpen(false); // Close menu on link click
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="header">
       <div className="logo">
-        <NavLink to="/" onClick={closeMenu}> {/* Logo now navigates to Home */}
+        <NavLink to="/" onClick={closeMenu}>
           <img 
-            src="https://logowik.com/content/uploads/images/todo-group3144.logowik.com.webp" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3gB-8DV5lSgeCZVAoRzPEWenpddafAJRUIiSl5aS8-FU2t9Y6HdBGi3EaqVVVrrRXkaA&usqp=CAU" 
             alt="Logo" 
           />
         </NavLink>
       </div>
       <nav>
-        {/* Hamburger Icon for small screens */}
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <FaBars />
         </div>
-        {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={closeMenu}  // Close menu on click
+              onClick={closeMenu}
             >
               <FaHome />
               Home
@@ -41,7 +38,7 @@ const Header = () => {
             <NavLink
               to="/add-task"
               className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={closeMenu}  // Close menu on click
+              onClick={closeMenu}
             >
               <FaPlus />
               Add Task
@@ -51,7 +48,7 @@ const Header = () => {
             <NavLink
               to="/edit-task"
               className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={closeMenu}  // Close menu on click
+              onClick={closeMenu}
             >
               <FaEdit />
               Edit Task

@@ -1,0 +1,213 @@
+/* Home Page Styles */
+.home-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Title styles */
+  .home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;  /* Dark blue-gray */
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3498db;  /* Heading color changed to blue */
+  }
+  
+  /* Top Bar: Filter Bar and Remaining Tasks in a Row */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;  /* Added space between top bar and task list */
+  }
+  
+  /* Remaining Tasks Counter */
+  .remaining-tasks {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+    flex-grow: 1; /* Takes up remaining space to push filter and clear-all buttons to the right */
+  }
+  
+  /* Filter Bar */
+  .filter-bar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .filter-button {
+    background-color: #fff;
+    border: 1px solid #3498db;  /* Blue border for filter button */
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #3498db;  /* Blue text color */
+    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 2.5em;
+  }
+  
+  .filter-button:hover {
+    background-color: #3498db;
+    color: white;  /* Change text color to white on hover */
+    transform: translateY(-2px);
+  }
+  
+  .filter-button:focus {
+    outline: none;
+    border-color: #2980b9;
+
+  }
+  
+  /* Clear All Button */
+  .clear-all-button { 
+    background-color: #fff;  
+    color: #3498db; 
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #3498db;
+  
+    height: 40px;
+  }
+  
+  .clear-all-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .clear-all-button:focus {
+    outline: none;
+  }
+  
+  /* Task List */
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  /* Task Card Container */
+  .task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .task-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Task Card Header */
+  .task-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-grow: 1;
+  }
+  
+  .task-card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    flex-grow: 1;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  /* Completed Task Heading Color */
+  .task-card-header h3.completed {
+    text-decoration: line-through;
+    color: black;  /* Black color for completed task title */
+  }
+  
+  /* Checkbox color */
+  .task-card-header input[type="checkbox"] {
+    accent-color: #000;  /* Black color for checkbox */
+    border-color: #000;  /* Border color to make checkbox visible */
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Delete Button */
+  .delete-button {
+    background-color: transparent;  /* No background */
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s;
+  }
+  
+  .delete-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .delete-button:focus {
+    outline: none;
+  }
+  
+  /* Delete Icon */
+  .delete-button svg {
+    color: #ff4d4d;  /* Red color for the icon */
+    transition: color 0.3s;
+  }
+  
+  .delete-button:hover svg {
+    color: #ff3333;  /* Darker red on hover */
+  }
+  
+  /* Loading and error messages */
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .top-bar {
+      flex-wrap: wrap; /* Allow wrapping of elements */
+      justify-content: center; /* Center items when wrapping */
+      gap: 1rem; /* Ensure proper spacing */
+    }
+  
+    .filter-bar {
+      flex: 1; /* Allow the filter buttons to take up equal space */
+      justify-content: space-around; /* Spread buttons evenly */
+    }
+  
+    .filter-button {
+      flex-grow: 1; /* Buttons grow to fill space */
+      padding: 0.5rem; /* Adjust padding for better fit */
+      font-size: 0.9rem; /* Reduce font size slightly */
+    }
+  
+    .clear-all-button {
+      flex-grow: 1; /* Clear All grows like filter buttons */
+      text-align: center;
+    }
+  }
+  

@@ -1,26 +1,47 @@
+/* Make the entire page fill the viewport */
+body, html {
+  height: 100%; /* Ensures the body stretches to the full height of the viewport */
+  margin: 0; /* Removes default margins */
+  display: flex;
+  flex-direction: column; /* Allows stacking of header, content, and footer */
+}
+
+/* Main content area */
+#root {
+  flex: 1; /* Pushes the footer to the bottom if the content is short */
+}
+
+/* Footer styles */
 .footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: auto; /* Pushes the footer to the bottom when content is short */
+  background-color: white; /* White background for the footer */
+  padding: 1rem; /* Adds spacing */
+  text-align: center; /* Centers the text and icons */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  font-size: 1rem; /* Readable text size */
+  width: 100%; /* Full width */
 }
 
-.footer .social-icons {
-  margin: 10px 0;
+/* Social icons container */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 1rem; /* Space between icons */
+  margin-bottom: 0.5rem; /* Space between icons and text */
 }
 
-.footer .social-icons a {
-  color: white;
-  margin: 0 10px;
-  font-size: 20px;
+/* Social icon links */
+.social-icons a {
+  color: #3498db; /* Blue color for the icons */
+  font-size: 1.5rem; /* Slightly larger icon size */
+  transition: color 0.3s; /* Smooth hover transition */
 }
 
-.footer .social-icons a:hover {
-  color: #ffeb3b;
+.social-icons a:hover {
+  color: #2980b9; /* Darker blue on hover */
 }
 
+/* Footer text */
 .footer p {
-  margin-top: 10px;
-  font-size: 14px;
+  margin: 0;
+  color: #333; /* Dark gray text color */
 }
