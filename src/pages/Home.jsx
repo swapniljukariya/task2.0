@@ -53,7 +53,7 @@ const Home = () => {
             className={`filter-button ${filter === "all" ? "active" : ""}`}
             onClick={() => handleFilterChange("all")}
           >
-            All
+            taskList
           </button>
           <button
             className={`filter-button ${filter === "active" ? "active" : ""}`}
