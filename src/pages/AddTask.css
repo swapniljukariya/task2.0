@@ -6,6 +6,9 @@
   justify-content: center;
   min-height: 100vh;
   background-color: white;
+  margin: 0; /* Remove any default margin */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .add-task-header {
@@ -26,7 +29,7 @@
 }
 
 .task-input {
-  padding: 15px ;
+  padding: 15px;
   font-size: 16px;
   width: 75%;
   border: 2px solid black;
@@ -34,10 +37,8 @@
   margin-right: 10px;
   transition: border-color 0.3s ease;
   box-sizing: border-box;
-  height: 55px;  
+  height: 55px;
 }
-
-
 
 .task-button {
   padding: 10px 15px;
@@ -75,62 +76,51 @@
   max-width: 100%;
   height: auto;
   border-radius: 12px;
- 
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .add-task-container {
+    padding: 1rem;  /* Less padding for smaller screens */
+    margin: 0 auto; /* Equal margin on all sides */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+
   .task-form {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 90%;
-    margin-left: 4em;
+    flex-direction: column; /* Stack input and button */
+    align-items: stretch; /* Full width for input and button */
+    gap: 10px; /* Add space between input and button */
+    width: 100%;
   }
 
   .task-input {
-    width: 100%;
-    margin-right: 8px; /* Keep spacing between input and button */
-    margin-bottom: 10px;
-    height: 50px; /* Increased height for small screens */
-
- 
-  }
-  .add-task-container {
-    min-height: 70vh;
+    width: 100%; /* Full width for input */
+    height: 50px; /* Adjust height */
   }
 
   .task-button {
-
     width: 50px;
     height: 50px;
-    margin-bottom: 10px;
+    margin: 0 auto; /* Center button */
   }
-  @media (max-width: 768px) {
-    .add-task-container {
-      padding: 1rem;
-      margin: 1rem auto; /* Equal margin on all sides */
-      width: 95%; /* Take most of the screen width */
-      box-sizing: border-box; /* Ensure padding doesn't affect width */
-    }
-  
-    .task-form {
-      flex-direction: column; /* Stack input and button */
-      align-items: stretch; /* Full width for input and button */
-      gap: 10px; /* Add space between input and button */
-      width: 100%;
-    }
-  
-    .task-input {
-      width: 100%; /* Full width for input */
-      height: 50px; /* Adjust height */
-    }
-  
-    .task-button {
-      width: 50px;
-      height: 50px;
-      margin: 0 auto; /* Center button */
-    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .add-task-container {
+    padding: 1rem;  /* Ensure padding is consistent */
+    margin: 0 auto; /* Equal margin on all sides */
+    width: 100%; /* Full width */
   }
-  
+
+  .task-input {
+    width: 100%; /* Full width for input */
+    height: 45px; /* Slightly reduced height for very small screens */
+  }
+
+  .task-button {
+    width: 45px;
+    height: 45px;
+  }
 }
