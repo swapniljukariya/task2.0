@@ -9,6 +9,7 @@
   margin: 0; /* Remove any default margin */
   width: 100%; /* Full width */
   box-sizing: border-box; /* Include padding in width calculation */
+  margin-top: 6em;
 }
 
 .add-task-header {
