@@ -85,6 +85,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 90%;
+    margin-left: 4em;
   }
 
   .task-input {
