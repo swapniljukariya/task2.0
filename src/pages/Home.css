@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    
   }
   
   /* Title styles */
@@ -208,6 +209,12 @@
     .clear-all-button {
       flex-grow: 1; /* Clear All grows like filter buttons */
       text-align: center;
+    }
+    .home-container {
+        margin: 1rem; /* Equal margins on all sides for small screens */
+        padding: 1rem; /* Reduce padding for better fit */
+        width: auto; /* Allow the container to resize properly */
+        box-shadow: none; /* Optional: Simplify shadows for smaller screens */
     }
   }
   
