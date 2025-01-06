@@ -1,87 +1,98 @@
 import React, { useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
 import TaskCard from "../components/TaskCard";
 import { useTasks } from "../context/TaskContext";
-import { toast } from "react-toastify"; // Import Toastify
-import "./Home.css";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const {
     tasks,
     handleDelete,
     updateTaskStatus,
+    updateTaskTitle,
     remainingTasks,
     setFilter,
-    clearAllTasks, // Use the function from context
+    clearAllTasks,
+    addTask,
   } = useTasks();
+
+  const [taskInput, setTaskInput] = useState("");
   const [filter, setLocalFilter] = useState("all");
 
-  // Filter change handler
+  const handleAddTask = () => {
+    if (taskInput.trim() === "") {
+      toast.error("Task cannot be empty!");
+      return;
+    }
+    addTask({ id: Date.now(), title: taskInput, completed: false });
+    setTaskInput("");
+  };
+
   const handleFilterChange = (newFilter) => {
     setLocalFilter(newFilter);
-    setFilter(newFilter); // Update filter in the context
-  };
-
-  // Delete with Toast
-  const handleDeleteWithToast = (taskId) => {
-    handleDelete(taskId);
-    toast.success("Task deleted successfully!");
-  };
-
-  // Status change with Toast
-  const handleStatusChangeWithToast = (taskId, status) => {
-    updateTaskStatus(taskId, status);
-    toast.info(status ? "Task marked as completed!" : "Task marked as active!");
-  };
-
-  // Clear all tasks handler
-  const handleClearAll = () => {
-    clearAllTasks(); // Call clearAllTasks from TaskContext
-    toast.info("All tasks cleared!"); // Toast feedback
+    setFilter(newFilter);
   };
 
   return (
-    <div className="home-container">
-      <h1>Task List</h1>
-      <div className="top-bar">
-        <div className="remaining-tasks">
-          <span>
-            {remainingTasks} task{remainingTasks !== 1 ? "s" : ""} left
-          </span>
+    <div className="container mx-auto p-4">
+      <h1 className="text-lg font-bold text-center mb-4">Task List</h1>
+
+      {/* Add Task Section */}
+      <div className="flex gap-2 mb-4">
+        <input
+          type="text"
+          placeholder="Add a task..."
+          value={taskInput}
+          onChange={(e) => setTaskInput(e.target.value)}
+          className="flex-1 px-3 py-2 border rounded"
+        />
+        <button
+          onClick={handleAddTask}
+          className="px-4 py-2 bg-blue-500 text-white rounded"
+        >
+          <AiOutlinePlus />
+        </button>
+      </div>
+
+      {/* Filter and Clear All */}
+      <div className="flex justify-between items-center mb-4">
+        <span>{remainingTasks} task{remainingTasks !== 1 && "s"} left</span>
+        <div className="flex gap-2">
+          {["all", "active", "completed"].map((type) => (
+            <button
+              key={type}
+              className={`px-4 py-2 rounded ${
+                filter === type ? "bg-blue-500 text-white" : "bg-gray-200"
+              }`}
+              onClick={() => handleFilterChange(type)}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </button>
+          ))}
         </div>
-        <div className="filter-bar">
-          <button
-            className={`filter-button ${filter === "all" ? "active" : ""}`}
-            onClick={() => handleFilterChange("all")}
-          >
-            taskList
-          </button>
-          <button
-            className={`filter-button ${filter === "active" ? "active" : ""}`}
-            onClick={() => handleFilterChange("active")}
-          >
-            Active
-          </button>
-          <button
-            className={`filter-button ${filter === "completed" ? "active" : ""}`}
-            onClick={() => handleFilterChange("completed")}
-          >
-            Completed
-          </button>
-        </div>
-        <button className="clear-all-button" onClick={handleClearAll}>
+        <button
+          onClick={clearAllTasks}
+          className="text-red-500 text-sm hover:underline"
+        >
           Clear All
         </button>
       </div>
 
-      <div className="task-list">
-        {tasks.map((task) => (
-          <TaskCard
-            key={task.id}
-            task={task}
-            onDelete={handleDeleteWithToast}
-            onStatusChange={handleStatusChangeWithToast}
-          />
-        ))}
+      {/* Task List */}
+      <div>
+        {tasks.length === 0 ? (
+          <p className="text-center">No tasks available</p>
+        ) : (
+          tasks.map((task) => (
+            <TaskCard
+              key={task.id}
+              task={task}
+              onDelete={handleDelete}
+              onStatusChange={updateTaskStatus}
+              onEdit={updateTaskTitle}
+            />
+          ))
+        )}
       </div>
     </div>
   );
