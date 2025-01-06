@@ -55,7 +55,7 @@ const Home = () => {
       </div>
 
       {/* Filter and Clear All */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex text-xs justify-between  items-center mb-4">
         <span>{remainingTasks} task{remainingTasks !== 1 && "s"} left</span>
         <div className="flex gap-2">
           {["all", "active", "completed"].map((type) => (
@@ -72,7 +72,7 @@ const Home = () => {
         </div>
         <button
           onClick={clearAllTasks}
-          className="text-red-500 text-sm hover:underline"
+          className="text-red-500 text-xs hover:underline"
         >
           Clear All
         </button>
